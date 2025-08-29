@@ -9,7 +9,7 @@ app.use(jsonParser);
 app.post('/api/bfhl', (req, res) => {
     try {
         const { data } = req.body;
-        let arr: string[] = [];
+        let arr = [];
         if (typeof data === 'string') {
             try {
                 arr = JSON.parse(data);
@@ -29,15 +29,15 @@ app.post('/api/bfhl', (req, res) => {
             });
         }
 
-        const odd_numbers: string[] = [];
-        const even_numbers: string[] = [];
-        const alphabets: string[] = [];
-        const special_characters: string[] = [];
+        const odd_numbers = [];
+        const even_numbers = [];
+        const alphabets = [];
+        const special_characters = [];
         let sum = 0;
         // let concat_string = '';
 
-        const alphaChars: string[] = [];
-        arr.forEach((item: string) => {
+        const alphaChars = [];
+        arr.forEach((item) => {
             if (/^-?\d+$/.test(item)) {
                 // It's a number
                 const num = parseInt(item, 10);
@@ -65,9 +65,9 @@ app.post('/api/bfhl', (req, res) => {
 
         res.status(200).json({
             is_success: true,
-            "user_id" : "amey_tripathi_17072003",
-            "email" : "ameytrips0307@gmail.com",
-            "roll_number" : "22BCE3111",
+            "user_id": "amey_tripathi_17072003",
+            "email": "ameytrips0307@gmail.com",
+            "roll_number": "22BCE3111",
             odd_numbers,
             even_numbers,
             alphabets,
